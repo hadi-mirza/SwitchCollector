@@ -4,19 +4,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from django.db import models
-
-class Game:
-  def __init__(self, name, time):
-    self.name = name
-    self.time = time
-
-games = [
-    Game('Legend Of Zelda: BOTW', '150 Hours'),
-    Game('Stardew Valley', '500 Hours'), 
-    Game('Untitled Goose Game', '10 Hours'),
-    Game('Ori and the Will of the Wisp', '24 Hours'),
-    Game('Lego Harry Potter', '32 Hours'),
-    ]
+from .models import Game
 
 def home(request):
     return render(request, 'index.html')
@@ -28,4 +16,9 @@ def contact_us(request):
     return render(request, 'contact-us.html')
 
 def games_index(request):
+    games = Game.objects.all()
     return render(request, 'games/index.html', {'played_games': games})
+
+def games_detail(request, game_id):
+    game = Game.objects.get(id=game_id)
+    return render(request, 'games/detail.html', {'game': game})
