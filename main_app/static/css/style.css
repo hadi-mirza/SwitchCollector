@@ -1,0 +1,7 @@
+.container a {
+    color: inherit;
+}
+
+.container a:hover {
+    color: lightcoral;
+}
