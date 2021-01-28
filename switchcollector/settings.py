@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'switchcollector.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'switchcollector',
+        'NAME': 'switchcollector2',
     }
 }
 
