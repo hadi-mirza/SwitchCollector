@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <br>
-<a href="/games/add" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i></a>
+<a href="/games/add" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
 {% for game in object_list %}
 <a href="/games/all/{{ game.id }}">
 <div class="card">

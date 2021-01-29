@@ -7,11 +7,13 @@ from django.http import HttpResponseRedirect
 from django.db import models
 from django.urls import reverse_lazy
 from .models import Game
+from .models import Review
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from django.views.generic import DeleteView
+from django.views.generic import FormView
 
 def home(request):
     return render(request, 'index.html')
@@ -36,7 +38,7 @@ class GameList(ListView):
 class GameDetail(DetailView):
     model = Game
     pk_url_kwarg = "game_id"
-
+    
 class GameCreate(CreateView):
     model = Game
     fields = '__all__'

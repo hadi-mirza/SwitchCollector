@@ -13,7 +13,7 @@ RATINGS = (
 class Game(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
-    time = models.IntegerField()
+    time = models.IntegerField('Hours Played')
 
     def __str__(self):
         return self.name
