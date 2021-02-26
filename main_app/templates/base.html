@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SwitchCollector</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?{% now "U" %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
@@ -20,9 +20,16 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;SwitchCollector&nbsp;&nbsp;</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/games/all">View All Games</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contactus">Contact Us</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'all_games' %}">View All Games</a></li>
+            <li><a href="{% url 'game_create' %}">Add a Game</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="/contactus">Contact Us</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>

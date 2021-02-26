@@ -5,3 +5,11 @@
 .container a:hover {
     color: lightcoral;
 }
+
+.modify a{
+    color: rgb(255, 255, 255);
+}
+
+.modify a:hover {
+    color: black;
+}

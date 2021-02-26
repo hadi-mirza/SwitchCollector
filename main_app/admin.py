@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Game
-from .models import Review
+from .models import Game, Review
 
 # Register your models here.
 

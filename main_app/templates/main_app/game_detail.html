@@ -12,9 +12,11 @@
       </div>
     </div>
 
-    <a href="{% url 'game_update' object.id %}" class="waves-effect waves-light btn-large">Update</a>
-    <a href="{% url 'game_delete' object.id %}" class="waves-effect waves-light btn-large">Delete</a>
-  
+    <div class="modify">
+    <a href="{% url 'game_update' object.id %}" class="amber waves-effect waves-yellow btn-large">Update</a>
+    <a href="{% url 'game_delete' object.id %}" class="red lighten-1 waves-effect waves-red btn-large">Delete</a>
+  </div>
+
 </div>
 
     <div class="col s6">
